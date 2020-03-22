@@ -2,6 +2,7 @@ package com.company;
 
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -90,6 +91,9 @@ public class Main {
                     break;
                 case "copy":
                     copyFile(currentPath, splitIn[1], splitIn[2]);
+                    break;
+                case "help":
+                    help();
                     break;
                 default:
                     System.out.println("Command not found");
@@ -282,6 +286,14 @@ public class Main {
             }
         } else
             System.out.println("File not found");
+    }
+
+    public static void help() throws FileNotFoundException {
+        Scanner sc = new Scanner(new File("C:\\Users\\pekal\\IdeaProjects\\consoleCMD\\src\\help"));
+        while (sc.hasNextLine()) {
+            String txt = sc.nextLine();
+            System.out.println(txt);
+        }
     }
 
 }
