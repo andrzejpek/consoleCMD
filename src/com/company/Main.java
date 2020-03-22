@@ -294,6 +294,7 @@ public class Main {
             String txt = sc.nextLine();
             System.out.println(txt);
         }
+        sc.close();
     }
 
 }
